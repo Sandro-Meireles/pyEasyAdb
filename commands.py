@@ -36,4 +36,7 @@ class BaseCommand(Base):
 
         value = value.replace(' ', '%s')
         self.execute(f'{device}shell input text {value}')
+<<<<<<< HEAD
 
+=======
+>>>>>>> d53faca7cff3096bd7ad17868e4dd0d4cc6328f5
