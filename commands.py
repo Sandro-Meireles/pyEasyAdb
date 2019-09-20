@@ -4,12 +4,12 @@ import settings
 class Base:
 
     def execute(self, command, device=''):
-        response = popen(f'./{settings.ADB_LOCATION} {command}').read()
+        response = popen('./{} {}'.format(settings.ADB_LOCATION, command)).read()
 
         return response
 
     def treat_device(self, device):
-        device = f' -s {device} '
+        device = ' -s {} '.format(device)
 
         return device
 
@@ -35,8 +35,5 @@ class BaseCommand(Base):
     def input_text(self, value, device=''):
 
         value = value.replace(' ', '%s')
-        self.execute(f'{device}shell input text {value}')
-<<<<<<< HEAD
+        self.execute('{}shell input text {}'.format(device, value))
 
-=======
->>>>>>> d53faca7cff3096bd7ad17868e4dd0d4cc6328f5
