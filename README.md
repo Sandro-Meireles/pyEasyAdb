@@ -37,7 +37,7 @@ print(base.treat_device('<device_id>'))
 
 ```
 
-the return will be: ``` -s 1585c853 ```
+The return will be: ``` -s 1585c853 ```
 
 ### devices
 
@@ -49,12 +49,12 @@ print(base.devices())
 
 ```
 
-as an example returns ```['device_id', 'device_id2']
+as an example returns ```['device_id', 'device_id2']```
 
 ## BaseCommand
 
 This class is used to execute rotary commands.
-let's instantiate the class BaseCommand:
+Let's instantiate the class BaseCommand:
 
 ```py
 from commands import BaseCommand
@@ -65,7 +65,7 @@ baseCommand = BaseCommand()
 
 ### input_text
 
-this command types specified text directly into the device:
+This command types specified text directly into the device:
 
 ```py
 baseCommand.input_text('Text example')
