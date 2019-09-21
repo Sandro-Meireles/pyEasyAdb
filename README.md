@@ -37,7 +37,7 @@ print(base.treat_device('<device_id>'))
 
 ```
 
-The return will be: ``` -s 1585c853 ```
+The return will be: ``` -s <device_id> ```
 
 ### devices
 
