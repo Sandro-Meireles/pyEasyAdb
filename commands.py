@@ -47,3 +47,6 @@ class Package(Base):
 
     def install(self, location, device=''):
         self.execute('install {}'.format(location), device=device)
+
+    def uninstall(self, app, device=''):
+        self.execute('uninstall {}'.format(app), device=device)
