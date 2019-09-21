@@ -1,11 +1,11 @@
 from os import popen
 
-ADB_LOCATION = 'adb/adb'
+ADB_LOCATION = 'adb'
 
 class Base:
 
     def execute(self, command, device=''):
-        response = popen('./{} {}'.format(ADB_LOCATION, command)).read()
+        response = popen('{} {}'.format(ADB_LOCATION, command)).read()
 
         return response
 
