@@ -5,14 +5,12 @@ ADB_LOCATION = 'adb'
 class Base:
 
     def execute(self, command, device=''):
+        if device:
+            device = ' -s {} '.format(device)
+
         response = popen('{}{} {}'.format(ADB_LOCATION, device, command)).read()
 
         return response
-
-    def treat_device(self, device):
-        device = ' -s {} '.format(device)
-
-        return device
 
     def devices(self):
 
