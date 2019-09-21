@@ -5,7 +5,7 @@ ADB_LOCATION = 'adb'
 class Base:
 
     def execute(self, command, device=''):
-        response = popen('{} {}'.format(ADB_LOCATION, command)).read()
+        response = popen('{}{} {}'.format(ADB_LOCATION, device, command)).read()
 
         return response
 
@@ -36,9 +36,14 @@ class BaseCommand(Base):
     def input_text(self, value, device=''):
 
         value = value.replace(' ', '%s')
-        self.execute('{}shell input text {}'.format(device, value))
+        self.execute('shell input text {}'.format(device, value))
     
     def input_key(self, key, device=''):
 
-        self.execute('{}shell input keyevent {}'.format(device, key))
+        self.execute('shell input keyevent {}'.format(key), device=device)
 
+
+class Package(Base):
+
+    def install(self, location, device=''):
+        self.execute('install {}'.format(location), device=device)
