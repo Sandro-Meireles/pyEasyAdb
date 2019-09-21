@@ -34,7 +34,7 @@ class BaseCommand(Base):
     def input_text(self, value, device=''):
 
         value = value.replace(' ', '%s')
-        self.execute('shell input text {}'.format(device, value))
+        self.execute('shell input text {}'.format(value), device=device)
     
     def input_key(self, key, device=''):
 
